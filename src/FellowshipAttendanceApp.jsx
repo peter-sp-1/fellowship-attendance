@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { QrCode, Users, UserCheck, UserX, Plus, Trash2, RefreshCw, Calendar, BarChart3 } from 'lucide-react';
 
 
-const API_BASE_URL = "https://fellowship-attendance.vercel.app/";
+const API_BASE_URL = " https://attendance-backend-2-7w0e.onrender.com/";
 
 const FellowshipAttendanceApp = () => {
   const [members, setMembers] = useState([]);
