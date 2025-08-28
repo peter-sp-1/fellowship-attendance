@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { QrCode, Users, UserCheck, UserX, Plus, Trash2, RefreshCw, Calendar, BarChart3 } from 'lucide-react';
 
 
-const API_BASE_URL = process.env.NODE_ENV === 'production'
-  ? 'https://your-vercel-app.vercel.app/api'
-  : 'http://localhost:5000/api';
+const API_BASE_URL = "https://fellowship-attendance.vercel.app/";
 
 const FellowshipAttendanceApp = () => {
   const [members, setMembers] = useState([]);

@@ -14,7 +14,7 @@ export default function AttendanceForm() {
     const phone = e.target.phone.value;
 
     try {
-      const res = await fetch("http://localhost:5000/api/attendees", {
+      const res = await fetch("https://fellowship-attendance.vercel.app/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, name, email, phone }),
