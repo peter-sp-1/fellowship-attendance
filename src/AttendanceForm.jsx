@@ -14,7 +14,7 @@ export default function AttendanceForm() {
     const phone = e.target.phone.value;
 
     try {
-    const res = await fetch("https://attendance-backend-1-vbuv.onrender.com/api/scan", {
+    const res = await fetch("https://attendance-backend-1ggf.onrender.com/api/scan", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId, name, email, phone }),

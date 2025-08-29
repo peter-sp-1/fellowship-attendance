@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { QrCode, Users, UserCheck, UserX, Plus, Trash2, RefreshCw, Calendar, BarChart3 } from 'lucide-react';
 
 
-const API_BASE_URL = "https://attendance-backend-1-vbuv.onrender.com/api";
+const API_BASE_URL = "https://attendance-backend-1ggf.onrender.com/api";
 
 
 const FellowshipAttendanceApp = () => {

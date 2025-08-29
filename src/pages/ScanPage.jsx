@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const API_BASE_URL = "https://attendance-backend-1-vbuv.onrender.com/api"; 
+const API_BASE_URL = "https://attendance-backend-1ggf.onrender.com/api"; 
 
 export default function ScanPage() {
   const [searchParams] = useSearchParams();
