@@ -127,8 +127,8 @@ const FellowshipAttendanceApp = () => {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/members/${memberId}`, {
-        method: 'DELETE'
+      await fetch(`https://attendance-backend-1ggf.onrender.com/api/members/${memberId}`, {
+        method: "DELETE",
       });
 
       if (response.ok) {
