@@ -127,10 +127,10 @@ const FellowshipAttendanceApp = () => {
     }
 
     try {
-      await fetch(`https://attendance-backend-1ggf.onrender.com/api/members/${memberId}`, {
+      const response = await fetch(`https://attendance-backend-1ggf.onrender.com/api/members/${memberId}`, {
         method: "DELETE",
       });
-
+  
       if (response.ok) {
         showMessage('Member deleted successfully', 'success');
         fetchMembers();
