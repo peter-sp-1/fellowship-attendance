@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { QrCode, Users, UserCheck, UserX, Plus, Trash2, RefreshCw, Calendar, BarChart3 } from 'lucide-react';
 
 
-const API_BASE_URL = "https://attendance-backend-2-7w0e.onrender.com/api";
+const API_BASE_URL = "https://attendance-backend-1-vbuv.onrender.com/api";
 
 
 const FellowshipAttendanceApp = () => {
@@ -84,9 +84,10 @@ const FellowshipAttendanceApp = () => {
   };
 
   // Add new member
+    // Add new member (manual from admin panel)
   const addMember = async () => {
-    if (!newMember.name || !newMember.email) {
-      showMessage('Name and email are required', 'error');
+    if (!newMember.name || !newMember.phone) {
+      showMessage('Name and phone are required', 'error');
       return;
     }
 
@@ -95,11 +96,15 @@ const FellowshipAttendanceApp = () => {
       const response = await fetch(`${API_BASE_URL}/members`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newMember)
+        body: JSON.stringify({
+          name: newMember.name,
+          phone: newMember.phone,
+          email: newMember.email || null, // optional
+        }),
       });
 
       const data = await response.json();
-      
+
       if (response.ok) {
         setNewMember({ name: '', email: '', phone: '' });
         showMessage('Member added successfully!', 'success');
@@ -113,6 +118,7 @@ const FellowshipAttendanceApp = () => {
     }
     setLoading(false);
   };
+
 
   // Remove member
   const removeMember = async (memberId) => {

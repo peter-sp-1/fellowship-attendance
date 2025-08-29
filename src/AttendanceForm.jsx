@@ -14,21 +14,23 @@ export default function AttendanceForm() {
     const phone = e.target.phone.value;
 
     try {
-      const res = await fetch("https://fellowship-attendance.vercel.app/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sessionId, name, email, phone }),
-      });
+    const res = await fetch("https://attendance-backend-1-vbuv.onrender.com/api/scan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId, name, email, phone }),
+    });
 
-      if (!res.ok) throw new Error("Failed to submit");
+    if (!res.ok) throw new Error("Failed to submit");
 
-      alert("✅ Attendance recorded successfully!");
-      e.target.reset();
+    alert("✅ Attendance recorded successfully!");
+    e.target.reset();
     } catch (err) {
       alert("❌ Error: " + err.message);
     } finally {
       setLoading(false);
     }
+
+
   };
 
   return (
